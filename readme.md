@@ -1,4 +1,7 @@
-# volume-meter
+# volume-meter-skip
+
+A `volume-meter`, but with skip value option.
+
 Renders the dynamic range of a [`MediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) waveform slice as a percentage in a [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/window.requestAnimationFrame) callback.
 
 [![npm](http://img.shields.io/npm/v/volume-meter.svg?style=flat-square)](http://www.npmjs.org/volume-meter)
@@ -23,7 +26,7 @@ var meter = volumemeter(ctx, { tweenIn: 2, tweenOut: 6 }, function (volume) {
 
 getusermedia({ audio: true, video: false }, function (err, stream) {
   if (err) return console.error(err)
-  
+
   var src = ctx.createMediaStreamSource(stream)
   src.connect(meter)
   src.connect(ctx.destination)
